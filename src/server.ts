@@ -11,20 +11,14 @@ var server = new WebSocketServer({ port: port });
 
 server.on('connection', ws => {
 	ws.on('message', message => {
-		server.broadcast(JSON.stringify(new models.UserMessage(message)));
+		broadcast(JSON.stringify(new models.UserMessage(message)));
 	});
 });
 
-server.broadcast = data => {
+function broadcast(data: string): void {
 	server.clients.forEach(client => {
 		client.send(data);
 	});	
 };
-
-server.on('connection', ws => {
-	ws.on('message', message => {
-		server.broadcast
-	});
-});
 
 console.log('Server is running on port', port);
