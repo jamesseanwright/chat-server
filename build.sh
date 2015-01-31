@@ -9,10 +9,9 @@ tsc -v > /dev/null || {
 
 echo "Building..."
 
-mkdir -p build
-rm -r build/* > /dev/null
+rm build/server.js
 
-tsc --module commonjs --target ES5 --outDir build src/* || {
+tsc --removeComments --module commonjs --target ES5 --outDir build src/* || {
 	echo "Compilation errors detected."
 	exit 1
 }
