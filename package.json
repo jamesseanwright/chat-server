@@ -1,0 +1,8 @@
+{
+  "name": "chat-server",
+  "description": "A very simple Node server written in TypeScript to receive and push chat room messages via WebSockets",
+  "repository": "https://github.com/jamesseanwright/chat-server",
+  "dependencies": {
+    "ws": "^0.7.1"
+  }
+}
