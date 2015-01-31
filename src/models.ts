@@ -8,7 +8,13 @@ export interface Message {
 export class UserMessage implements Message {
 	private data: { name: string; message: string };
 
-	constructor(data: { name: string; message: string }) {
+	constructor(payload: string) {
+		var data = JSON.parse(payload);
+
+		if (!data.name || !data.message) {
+			throw new Error('Invalid message payload received: ' + data);
+		}
+
 		this.data = data;
 	}
 
