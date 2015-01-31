@@ -12,5 +12,9 @@ echo "Building..."
 mkdir -p build
 rm -r build/* > /dev/null
 
-tsc --module commonjs --outDir build src/server.ts
+tsc --module commonjs --target ES5 --outDir build src/* || {
+	echo "Compilation errors detected."
+	exit 1
+}
+
 echo "Done! Run the server with node build/server"
