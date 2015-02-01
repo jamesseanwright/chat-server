@@ -11,7 +11,7 @@ echo "Building..."
 
 rm -r build/* > /dev/null
 
-tsc --removeComments --module commonjs --target ES5 --outDir build src/* || {
+tsc --removeComments --module commonjs --target ES5 --outDir build src/server.ts || {
 	echo "Compilation errors detected."
 	exit 1
 }
