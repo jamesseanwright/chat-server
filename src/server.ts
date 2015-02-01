@@ -12,9 +12,10 @@ var server = new WebSocketServer({ port: port });
 server.on('connection', ws => {
 	ws.on('message', message => {
 		try {
-			broadcast(JSON.stringify(new models.UserMessage(message)));
+			var userMessage: models.UserMessage = new models.UserMessage(message);
+			broadcast(JSON.stringify(userMessage));
 		} catch (e) {
-			console.log(e.message);
+			console.error(e.message);
 		}
 	});
 });

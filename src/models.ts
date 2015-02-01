@@ -12,7 +12,7 @@ export class UserMessage implements Message {
 		var data = JSON.parse(payload);
 
 		if (!data.name || !data.message) {
-			throw new Error('Invalid message payload received: ' + data);
+			throw new Error('Invalid message payload received: ' + payload);
 		}
 
 		this.data = data;
