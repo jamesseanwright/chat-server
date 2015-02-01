@@ -1,5 +1,5 @@
-/// <reference path='../definitions/node.d.ts' />
-/// <reference path='../definitions/ws.d.ts' />
+/// <reference path='../declarations/node.d.ts' />
+/// <reference path='../declarations/ws.d.ts' />
 'use strict';
 
 import WebSocket = require('ws');
